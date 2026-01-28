@@ -32,7 +32,7 @@ export const TOOLS_CONFIG: ToolItem[] = [
     title: "JSON 格式化",
     description: "美化 JSON 數據，語法高亮與錯誤檢測，支援壓縮模式。",
     icon: FileJson,
-    status: "coming-soon",
+    status: "hot",
     tags: ["Formatter", "Dev"],
   },
 ];
