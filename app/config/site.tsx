@@ -94,7 +94,7 @@ export const TOOLS_CONFIG: ToolItem[] = [
     title: "Hash 雜湊生成器",
     description: "計算文字的 MD5, SHA-1, SHA-256 雜湊值 (Client-side Only)。",
     icon: ShieldCheck,
-    status: "coming-soon",
+    status: "new",
     tags: ["Security", "Crypto"],
   },
   // 8. Lorem Ipsum (UI 開發必備)
