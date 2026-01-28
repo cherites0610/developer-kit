@@ -4,6 +4,8 @@ import {
   FileJson,
   Globe,
   Hash,
+  Key,
+  KeyRound,
   LayoutGrid,
   Link as LinkIcon,
   Lock,
@@ -76,7 +78,7 @@ export const TOOLS_CONFIG: ToolItem[] = [
     title: "URL 編碼/解碼",
     description: "將 URL 特殊字符轉換為百分號編碼，確保參數傳輸安全。",
     icon: LinkIcon,
-    status: "new",
+    status: "stable",
     tags: ["Encoder", "Web"],
   },
   // 6. SQL Formatter (可複用 Monaco Editor)
@@ -94,7 +96,7 @@ export const TOOLS_CONFIG: ToolItem[] = [
     title: "Hash 雜湊生成器",
     description: "計算文字的 MD5, SHA-1, SHA-256 雜湊值 (Client-side Only)。",
     icon: ShieldCheck,
-    status: "new",
+    status: "stable",
     tags: ["Security", "Crypto"],
   },
   // 8. Lorem Ipsum (UI 開發必備)
@@ -103,8 +105,24 @@ export const TOOLS_CONFIG: ToolItem[] = [
     title: "亂數假文生成",
     description: "生成指定長度的 Lorem Ipsum 假文，排版測試專用。",
     icon: Type,
-    status: "coming-soon",
+    status: "stable",
     tags: ["Generator", "Design"],
+  },
+  {
+    slug: "jwt-decoder",
+    title: "JWT 解碼器",
+    description: "解析 JWT Token 結構 (Header, Payload)，除錯身份驗證問題。",
+    icon: KeyRound,
+    status: "new",
+    tags: ["Auth", "Security"],
+  },
+  {
+    slug: "jwt-encoder",
+    title: "JWT 生成器",
+    description: "自訂 Payload 並簽署 JWT Token，方便測試 API 權限。",
+    icon: Key, // 使用不同的 icon
+    status: "new",
+    tags: ["Auth", "Generator"],
   },
 ];
 
