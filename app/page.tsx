@@ -1,36 +1,8 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, FileJson, Hash, Lock } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { TOOLS_CONFIG } from './config/site'
-
-// 定義工具列表資料 (未來新增工具只需加在這裡)
-const TOOLS = [
-  {
-    slug: "uuid-generator",
-    title: "UUID 生成器",
-    description: "批量生成 UUID v1/v4，支援大小寫轉換與移除連字號，極速響應。",
-    icon: <Hash className="w-6 h-6 text-blue-500" />,
-    status: "new", // new, hot, beta
-    tags: ["Generator", "GUID"],
-  },
-  {
-    slug: "json-formatter", // 尚未開發，先佔位
-    title: "JSON 格式化/校驗",
-    description: "美化 JSON 數據，語法高亮與錯誤檢測，支援壓縮模式。",
-    icon: <FileJson className="w-6 h-6 text-green-500" />,
-    status: "coming-soon",
-    tags: ["Formatter", "Dev"],
-  },
-  {
-    slug: "base64-encoder",
-    title: "Base64 編碼/解碼",
-    description: "支援 UTF-8 中文的 Base64 轉換器，極速處理文字編解碼。", // 稍微優化描述
-    icon: <Lock className="w-6 h-6 text-orange-500" />,
-    status: "hot", // 改為 hot 或 new
-    tags: ["Encoder", "Security"],
-  },
-];
 
 export default function Home() {
   return (

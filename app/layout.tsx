@@ -37,20 +37,20 @@ export const metadata: Metadata = {
     description: "極速、純淨、無廣告。專為開發者打造的高性能 Web Tools。",
     siteName: "DevTools",
     // 之後我們可以做一張帥氣的 OG Image 放在 public/og.png
-    // images: [
-    //   {
-    //     url: "/og.png",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "DevTools Preview",
-    //   },
-    // ],
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "DevTools Preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "DevTools | 開發者工具箱",
     description: "極速、純淨、無廣告。專為開發者打造的高性能 Web Tools。",
-    // images: ["/og.png"],
+    images: ["/og.png"],
   },
   robots: {
     index: true,
