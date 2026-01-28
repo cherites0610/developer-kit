@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner"
 import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import { AppShell } from './components/layout/app-shell'
 import "./globals.css"
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,16 +72,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-TW" className="dark">
-      {/* 1. lang="zh-TW": 設定中文
-        2. className="dark": 強制開啟 Dark Mode
-      */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-zinc-50 min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground min-h-screen`}
       >
-        {children}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
+
+        {/* 使用 AppShell 包裹內容，它會自動處理 Sidebar 的顯示與隱藏 */}
+        <AppShell>
+          {children}
+        </AppShell>
+
         <Toaster />
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
     </html>
   );
 }

@@ -1,60 +1,22 @@
-import { notFound } from "next/navigation"
+import { Metadata } from "next"
 import { JsonLd } from '../../components/seo/json-ld'
 import UuidGenerator from '../../components/tools/uuid-generator'
-
-// --- 資料定義 (模擬 DB) ---
-const TOOLS = {
-  "uuid-generator": {
-    name: "UUID Generator",
-    title: "UUID 生成器 (v1/v4) | 在線批量產 UUID",
-    description: "免費、極速的線上 UUID 生成器。支援 UUID v1 (時間戳) 與 v4 (隨機)，可批量生成、移除連字號、大小寫轉換。開發者必備的 GUID 工具。",
-    keywords: ["UUID生成器", "GUID Generator", "UUID v4", "UUID v1", "線上工具"],
-    component: <UuidGenerator />,
+// --- SEO Metadata (靜態定義) ---
+export const metadata: Metadata = {
+  title: "UUID 生成器 (v1/v4) | 在線批量產 UUID",
+  description: "免費、極速的線上 UUID 生成器。支援 UUID v1 (時間戳) 與 v4 (隨機)，可批量生成、移除連字號、大小寫轉換。開發者必備的 GUID 工具。",
+  keywords: ["UUID生成器", "GUID Generator", "UUID v4", "UUID v1", "線上工具"],
+  alternates: {
+    canonical: "/tools/uuid-generator",
   },
 };
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://your-domain.com";
-
-interface PageProps {
-  params: Promise<{ slug: string }>;
-}
-
-// 1. 動態生成 Metadata (給瀏覽器和爬蟲看)
-export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
-  const tool = TOOLS[slug as keyof typeof TOOLS];
-
-  if (!tool) return { title: "Tool Not Found" };
-
-  return {
-    title: tool.title, // 這裡會自動套用 layout 的 template
-    description: tool.description,
-    keywords: tool.keywords,
-    alternates: {
-      canonical: `${SITE_URL}/tools/${slug}`, // 避免重複內容問題
-    },
-    openGraph: {
-      title: tool.title,
-      description: tool.description,
-      url: `${SITE_URL}/tools/${slug}`,
-      type: "website",
-    },
-  };
-}
-
-export default async function ToolPage({ params }: PageProps) {
-  const { slug } = await params;
-  const tool = TOOLS[slug as keyof typeof TOOLS];
-
-  if (!tool) {
-    notFound();
-  }
-
-  // 2. 定義結構化資料 (給 Google 演算法看)
+export default function UuidPage() {
+  // --- 結構化資料 ---
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": tool.name,
+    "name": "UUID Generator",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -62,30 +24,29 @@ export default async function ToolPage({ params }: PageProps) {
       "price": "0",
       "priceCurrency": "USD",
     },
-    "description": tool.description,
+    "description": "免費、極速的線上 UUID 生成器，支援 v1 與 v4 版本。",
   };
 
   return (
     <main className="container mx-auto px-4 py-12 max-w-6xl">
-      {/* 注入 JSON-LD */}
       <JsonLd data={jsonLd} />
 
       {/* SEO Sandwich Top */}
       <section className="mb-12 text-center space-y-4">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-          {tool.name}
+          UUID 生成器
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          {tool.description}
+          在線批量生成 UUID v1/v4，支援大小寫轉換與移除連字號，極速響應。
         </p>
       </section>
 
-      {/* Tool Component */}
+      {/* 核心工具組件 */}
       <section className="mb-20">
-        {tool.component}
+        <UuidGenerator />
       </section>
 
-      {/* SEO Sandwich Bottom (Rich Content) - 這是 SEO 關鍵，增加頁面文字量 */}
+      {/* SEO Sandwich Bottom (Rich Content) */}
       <section className="prose prose-invert mx-auto border-t border-border pt-10 max-w-4xl">
         <article className="space-y-6 text-muted-foreground">
           <h2 className="text-2xl font-bold text-foreground">什麼是 UUID？</h2>

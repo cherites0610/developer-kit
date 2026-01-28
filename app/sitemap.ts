@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 2. 工具頁面 (目前只有 uuid-generator)
   // 未來這裡可以讀取資料庫或常數陣列來動態生成
-  const tools = ["uuid-generator"].map((slug) => ({
+  const tools = ["uuid-generator", "base64-encoder"].map((slug) => ({
     url: `${SITE_URL}/tools/${slug}`,
     lastModified: new Date().toISOString(),
     changeFrequency: "weekly" as const,

@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, FileJson, Hash, Lock } from "lucide-react"
 import Link from "next/link"
+import { TOOLS_CONFIG } from './config/site'
 
 // 定義工具列表資料 (未來新增工具只需加在這裡)
 const TOOLS = [
@@ -22,11 +23,11 @@ const TOOLS = [
     tags: ["Formatter", "Dev"],
   },
   {
-    slug: "base64-encoder", // 尚未開發，先佔位
+    slug: "base64-encoder",
     title: "Base64 編碼/解碼",
-    description: "快速將文字或圖片轉換為 Base64 格式，支援 UTF-8。",
+    description: "支援 UTF-8 中文的 Base64 轉換器，極速處理文字編解碼。", // 稍微優化描述
     icon: <Lock className="w-6 h-6 text-orange-500" />,
-    status: "coming-soon",
+    status: "hot", // 改為 hot 或 new
     tags: ["Encoder", "Security"],
   },
 ];
@@ -65,23 +66,26 @@ export default function Home() {
       {/* 2. Tool Grid: 工具矩陣 */}
       <section className="container mx-auto px-4 pb-20 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {TOOLS.map((tool) => (
+          {TOOLS_CONFIG.map((tool) => (
             <Link
               key={tool.slug}
               href={tool.status === "coming-soon" ? "#" : `/tools/${tool.slug}`}
               className={tool.status === "coming-soon" ? "cursor-not-allowed opacity-60" : "cursor-pointer"}
             >
               <Card className="h-full border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 transition-all duration-300 hover:border-zinc-700 group relative overflow-hidden">
-                {/* 裝飾性光暈 */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-800/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 pointer-events-none" />
 
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
                     <div className="p-2 bg-zinc-950 rounded-lg border border-zinc-800 group-hover:border-zinc-700 transition-colors">
-                      {tool.icon}
+                      {/* 直接渲染 Icon 組件 */}
+                      <tool.icon className="w-6 h-6 text-zinc-100" />
                     </div>
                     {tool.status === "new" && (
                       <Badge className="bg-blue-600 hover:bg-blue-700 text-white border-none">NEW</Badge>
+                    )}
+                    {tool.status === "hot" && (
+                      <Badge className="bg-orange-600 hover:bg-orange-700 text-white border-none">HOT</Badge>
                     )}
                     {tool.status === "coming-soon" && (
                       <Badge variant="secondary" className="text-zinc-500">Soon</Badge>
