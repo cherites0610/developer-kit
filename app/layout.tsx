@@ -17,6 +17,9 @@ const SITE_URL = "https://kit.cherites.org"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  verification: {
+    google: "n9X7iLzzJRzxTYr_2GU9sO1La8ldYk7TpcNpvTVd9UM",
+  },
   title: {
     default: "DevTools | 開發者工具箱",
     template: "%s | DevTools", // 子頁面會自動變成 "UUID 生成器 | DevTools"
