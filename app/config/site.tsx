@@ -59,7 +59,7 @@ export const TOOLS_CONFIG: ToolItem[] = [
     title: "Unix 時間戳轉換",
     description: "在 Unix Timestamp 與人類可讀日期之間互轉，支援秒/毫秒。",
     icon: Clock,
-    status: "new",
+    status: "stable",
     tags: ["Converter", "Date"],
   },
   {
@@ -67,7 +67,7 @@ export const TOOLS_CONFIG: ToolItem[] = [
     title: "時區轉換/偏移",
     description: "UTC 與本地時間即時對照，支援時間偏移 (Offset) 模擬測試。",
     icon: Globe,
-    status: "new",
+    status: "stable",
     tags: ["Timezone", "ISO"],
   },
   // 5. URL Encode (API 除錯必備)
@@ -76,7 +76,7 @@ export const TOOLS_CONFIG: ToolItem[] = [
     title: "URL 編碼/解碼",
     description: "將 URL 特殊字符轉換為百分號編碼，確保參數傳輸安全。",
     icon: LinkIcon,
-    status: "coming-soon",
+    status: "new",
     tags: ["Encoder", "Web"],
   },
   // 6. SQL Formatter (可複用 Monaco Editor)
