@@ -172,7 +172,7 @@ export default function LoremGenerator() {
 
             {/* Plain Text Mode */}
             <TabsContent value="text" className="flex-1 mt-0">
-                <Card className="border-zinc-800 bg-[#1e1e1e] h-full min-h-[500px] flex flex-col relative group">
+                <Card className="border-zinc-800 bg-[#1e1e1e] h-full min-h-125 flex flex-col relative group">
                     <CardContent className="p-6 font-serif text-lg text-zinc-300 leading-relaxed space-y-4 flex-1 overflow-y-auto max-h-[70vh]">
                         {output.map((para, i) => (
                             <p key={i}>{para}</p>
@@ -189,7 +189,7 @@ export default function LoremGenerator() {
 
             {/* HTML Mode */}
             <TabsContent value="html" className="flex-1 mt-0">
-                <Card className="border-zinc-800 bg-[#1e1e1e] h-full min-h-[500px] flex flex-col relative group">
+                <Card className="border-zinc-800 bg-[#1e1e1e] h-full min-h-125 flex flex-col relative group">
                     <CardContent className="p-6 font-mono text-sm text-blue-200 leading-relaxed space-y-2 flex-1 overflow-y-auto max-h-[70vh]">
                         {output.map((para, i) => (
                             <div key={i}>

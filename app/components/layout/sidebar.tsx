@@ -21,7 +21,7 @@ export function DesktopSidebar({ className }: React.HTMLAttributes<HTMLDivElemen
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
           <Link href="/" className="flex items-center pl-3 mb-14">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-white to-zinc-500 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-linear-to-r from-white to-zinc-500 bg-clip-text text-transparent">
               DevTools
             </h1>
           </Link>
@@ -87,7 +87,7 @@ export function MobileNav() {
     return (
       <div className="md:hidden flex items-center justify-between p-4 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur sticky top-0 z-50">
          <Link href="/">
-            <h1 className="text-xl font-bold bg-gradient-to-r from-white to-zinc-500 bg-clip-text text-transparent">
+            <h1 className="text-xl font-bold bg-linear-to-r from-white to-zinc-500 bg-clip-text text-transparent">
               DevTools
             </h1>
          </Link>

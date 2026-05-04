@@ -39,7 +39,7 @@ function OutputRow({ value, onCopy, onRegenerate }: { value: string; onCopy: () 
   return (
     <div className="space-y-2">
       <div
-        className="w-full font-mono text-sm text-zinc-200 bg-zinc-950 border border-zinc-700 rounded-md px-3 py-3 break-all select-all cursor-text min-h-[48px] leading-relaxed"
+        className="w-full font-mono text-sm text-zinc-200 bg-zinc-950 border border-zinc-700 rounded-md px-3 py-3 break-all select-all cursor-text min-h-12 leading-relaxed"
       >
         {value}
       </div>

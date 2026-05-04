@@ -29,7 +29,7 @@ export default function Base64Converter() {
         // UTF-8 Encode: Text -> Base64
         const encoded = btoa(
           encodeURIComponent(text).replace(/%([0-9A-F]{2})/g,
-            function toSolidBytes(match, p1) {
+            function toSolidBytes(_match, p1) {
               return String.fromCharCode(parseInt(p1, 16));
             })
         );
@@ -109,7 +109,7 @@ export default function Base64Converter() {
             <CardContent>
               <Textarea
                 placeholder={mode === "encode" ? "輸入要編碼的內容..." : "貼上 Base64 代碼..."}
-                className="min-h-[300px] font-mono text-sm bg-zinc-950 border-zinc-800 focus:border-blue-500/50 resize-none"
+                className="min-h-75 font-mono text-sm bg-zinc-950 border-zinc-800 focus:border-blue-500/50 resize-none"
                 value={input}
                 onChange={(e) => handleConvert(e.target.value, mode)}
               />
@@ -148,7 +148,7 @@ export default function Base64Converter() {
                 <Textarea
                   readOnly
                   value={error ? error : output}
-                  className={`min-h-[300px] font-mono text-sm bg-zinc-950 border-zinc-800 focus-visible:ring-0 resize-none ${
+                  className={`min-h-75 font-mono text-sm bg-zinc-950 border-zinc-800 focus-visible:ring-0 resize-none ${
                     error ? "text-red-500 border-red-900/50" : "text-zinc-300"
                   }`}
                 />

@@ -109,7 +109,7 @@ export default function TimestampConverter() {
             </Button>
             <Button
               onClick={() => copyToClipboard(now ? getUnixTime(now).toString() : "")}
-              className="bg-blue-600 hover:bg-blue-700 text-white min-w-[100px]"
+              className="bg-blue-600 hover:bg-blue-700 text-white min-w-25"
             >
               <Copy className="mr-2 h-4 w-4" /> 複製
             </Button>
@@ -126,7 +126,7 @@ export default function TimestampConverter() {
              <CardTitle className="text-sm text-zinc-400 flex items-center justify-between">
                 <span>Unix Timestamp</span>
                 <Select value={unit} onValueChange={(v: any) => { setUnit(v); setInputToNow(); }}>
-                  <SelectTrigger className="w-[130px] h-7 text-xs bg-zinc-900 border-zinc-700">
+                  <SelectTrigger className="w-32.5 h-7 text-xs bg-zinc-900 border-zinc-700">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -178,7 +178,7 @@ export default function TimestampConverter() {
                  step="1"
                  value={dateInput}
                  onChange={(e) => handleDateChange(e.target.value)}
-                 className="font-mono text-lg h-12 bg-zinc-900 border-zinc-600 hover:border-zinc-400 focus:border-blue-500 transition-colors [color-scheme:dark]"
+                 className="font-mono text-lg h-12 bg-zinc-900 border-zinc-600 hover:border-zinc-400 focus:border-blue-500 transition-colors scheme-dark"
                />
              </div>
 

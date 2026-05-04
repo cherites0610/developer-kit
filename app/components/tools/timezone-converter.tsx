@@ -149,7 +149,7 @@ export default function TimezoneConverter() {
               </div>
 
               {/* Local Time */}
-              <div className="space-y-2 border-l border-zinc-800 pl-8 sm:border-l-0 sm:pl-0 sm:relative sm:before:absolute sm:before:left-[-1px] sm:before:top-0 sm:before:bottom-0 sm:before:w-[1px] sm:before:bg-zinc-800">
+              <div className="space-y-2 border-l border-zinc-800 pl-8 sm:border-l-0 sm:pl-0 sm:relative sm:before:absolute sm:before:-left-px sm:before:top-0 sm:before:bottom-0 sm:before:w-px sm:before:bg-zinc-800">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-blue-400 text-xs font-mono uppercase tracking-wider">
                     <Clock className="w-3 h-3" /> {getTimezoneName()}

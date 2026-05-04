@@ -126,7 +126,7 @@ export default function UrlEncoder() {
             <CardContent className="flex-1 p-0">
               <Textarea
                 placeholder={mode === "encode" ? "例如: https://example.com?q=你好" : "例如: https%3A%2F%2Fexample.com%3Fq%3D%E4%BD%A0%E5%A5%BD"}
-                className="min-h-[300px] h-full border-0 bg-transparent resize-none focus-visible:ring-0 p-4 font-mono text-sm leading-relaxed"
+                className="min-h-75 h-full border-0 bg-transparent resize-none focus-visible:ring-0 p-4 font-mono text-sm leading-relaxed"
                 value={input}
                 onChange={(e) => handleConvert(e.target.value, mode, encodeAll)}
               />
@@ -173,7 +173,7 @@ export default function UrlEncoder() {
                ) : (
                  <Textarea
                     readOnly
-                    className="min-h-[300px] h-full border-0 bg-zinc-950/50 resize-none focus-visible:ring-0 p-4 font-mono text-sm text-zinc-300 leading-relaxed"
+                    className="min-h-75 h-full border-0 bg-zinc-950/50 resize-none focus-visible:ring-0 p-4 font-mono text-sm text-zinc-300 leading-relaxed"
                     value={output}
                  />
                )}

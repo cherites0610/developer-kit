@@ -128,7 +128,7 @@ export default function UuidGenerator() {
           </Button>
         </CardHeader>
         <CardContent>
-          <div className="max-h-[500px] overflow-y-auto space-y-1 font-mono text-sm">
+          <div className="max-h-125 overflow-y-auto space-y-1 font-mono text-sm">
             {uuids.map((id, index) => (
               <div
                 key={`${id}-${index}`}

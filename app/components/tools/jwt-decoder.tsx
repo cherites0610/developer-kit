@@ -92,7 +92,7 @@ export default function JwtDecoder() {
           <CardContent className="flex-1 p-0">
             <Textarea
               placeholder="貼上 JWT (eyJhbGci...)"
-              className="min-h-[400px] h-full border-0 bg-transparent resize-none focus-visible:ring-0 p-6 font-mono text-base break-all text-zinc-200 placeholder:text-zinc-600 leading-relaxed"
+              className="min-h-100 h-full border-0 bg-transparent resize-none focus-visible:ring-0 p-6 font-mono text-base break-all text-zinc-200 placeholder:text-zinc-600 leading-relaxed"
               value={token}
               onChange={(e) => setToken(e.target.value)}
             />
@@ -159,7 +159,7 @@ export default function JwtDecoder() {
             </div>
           </CardHeader>
           <CardContent className="p-0">
-            <pre className="p-4 text-sm font-mono text-purple-200 overflow-x-auto min-h-[150px]">
+            <pre className="p-4 text-sm font-mono text-purple-200 overflow-x-auto min-h-37.5">
               {payload || <span className="text-zinc-700 opacity-50">waiting for input...</span>}
             </pre>
           </CardContent>

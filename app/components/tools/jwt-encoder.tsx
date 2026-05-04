@@ -111,7 +111,7 @@ export default function JwtEncoder() {
              <Textarea
                value={headerStr}
                onChange={(e) => setHeaderStr(e.target.value)}
-               className="min-h-[100px] border-0 bg-transparent font-mono text-sm text-red-100 focus-visible:ring-0 resize-none p-4"
+               className="min-h-25 border-0 bg-transparent font-mono text-sm text-red-100 focus-visible:ring-0 resize-none p-4"
                spellCheck={false}
              />
           </CardContent>
@@ -138,7 +138,7 @@ export default function JwtEncoder() {
              <Textarea
                value={payloadStr}
                onChange={(e) => setPayloadStr(e.target.value)}
-               className="min-h-[200px] border-0 bg-transparent font-mono text-sm text-purple-100 focus-visible:ring-0 resize-none p-4"
+               className="min-h-50 border-0 bg-transparent font-mono text-sm text-purple-100 focus-visible:ring-0 resize-none p-4"
                spellCheck={false}
              />
           </CardContent>
@@ -190,7 +190,7 @@ export default function JwtEncoder() {
                 <Textarea
                     readOnly
                     value={token}
-                    className="h-full min-h-[400px] border-0 bg-transparent resize-none focus-visible:ring-0 p-6 font-mono text-base break-all text-zinc-300 leading-relaxed"
+                    className="h-full min-h-100 border-0 bg-transparent resize-none focus-visible:ring-0 p-6 font-mono text-base break-all text-zinc-300 leading-relaxed"
                 />
                 {!error && token && (
                     <Button

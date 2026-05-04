@@ -83,7 +83,7 @@ export default function HashGenerator() {
         <CardContent className="flex-1 p-0">
           <Textarea
             placeholder="輸入要進行雜湊的文字..."
-            className="min-h-[250px] h-full border-0 bg-transparent resize-none focus-visible:ring-0 p-6 font-mono text-base leading-relaxed text-zinc-200 placeholder:text-zinc-600"
+            className="min-h-62.5 h-full border-0 bg-transparent resize-none focus-visible:ring-0 p-6 font-mono text-base leading-relaxed text-zinc-200 placeholder:text-zinc-600"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
@@ -144,7 +144,7 @@ export default function HashGenerator() {
             </CardHeader>
             <CardContent className="space-y-4 pt-2">
                 <div className="relative group">
-                    <div className="min-h-[80px] w-full rounded-md border border-zinc-800 bg-zinc-950 p-3 font-mono text-sm break-all text-zinc-300">
+                    <div className="min-h-20 w-full rounded-md border border-zinc-800 bg-zinc-950 p-3 font-mono text-sm break-all text-zinc-300">
                         {output || <span className="text-zinc-700 italic">等待輸入...</span>}
                     </div>
                     {output && (
