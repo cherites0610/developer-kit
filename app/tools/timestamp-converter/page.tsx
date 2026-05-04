@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: "Unix Timestamp 轉換器 | 時間戳互轉 (Seconds/Millis)",
   description: "免費、極速的 Unix 時間戳轉換工具。支援秒與毫秒互轉，即時顯示當前時間戳，並提供 UTC 與 ISO 8601 格式轉換。",
   keywords: ["Unix Timestamp", "時間戳轉換", "Unix Time Converter", "Epoch Converter", "時間戳生成"],
-  alternates: {
-    canonical: "/tools/timestamp-converter",
+  alternates: { canonical: "/tools/timestamp-converter" },
+  openGraph: {
+    title: "Unix Timestamp 轉換器 | DevTools",
+    description: "免費、極速的 Unix 時間戳轉換工具。支援秒與毫秒互轉，即時顯示當前時間戳，提供 UTC 與 ISO 8601 格式。",
+  },
+  twitter: {
+    title: "Unix Timestamp 轉換器 | DevTools",
+    description: "免費、極速的 Unix 時間戳轉換工具。支援秒與毫秒互轉，即時顯示當前時間戳，提供 UTC 與 ISO 8601 格式。",
   },
 };
 

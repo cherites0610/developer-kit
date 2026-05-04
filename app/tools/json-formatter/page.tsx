@@ -5,11 +5,17 @@ import { JsonLd } from '../../components/seo/json-ld'
 import JsonEditor from '../../components/tools/json-editor'
 
 export const metadata: Metadata = {
-  title: "JSON 格式化與驗證工具 (Formatter & Validator) | DevTools",
+  title: "JSON 格式化與驗證工具 (Formatter & Validator)",
   description: "免費、安全的線上 JSON 格式化工具。支援語法高亮、錯誤檢測、JSON 壓縮 (Minify) 與美化 (Prettify)。VS Code 等級的編輯體驗。",
   keywords: ["JSON Formatter", "JSON Validator", "JSON Beautifier", "JSON Minifier", "線上JSON工具"],
-  alternates: {
-    canonical: "/tools/json-formatter",
+  alternates: { canonical: "/tools/json-formatter" },
+  openGraph: {
+    title: "JSON 格式化 & 驗證器 | DevTools",
+    description: "免費、安全的線上 JSON 格式化工具。支援語法高亮、錯誤檢測、JSON 壓縮與美化。VS Code 等級的編輯體驗。",
+  },
+  twitter: {
+    title: "JSON 格式化 & 驗證器 | DevTools",
+    description: "免費、安全的線上 JSON 格式化工具。支援語法高亮、錯誤檢測、JSON 壓縮與美化。VS Code 等級的編輯體驗。",
   },
 };
 
@@ -18,7 +24,7 @@ export default function JsonPage() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "JSON Formatter & Validator",
-    "applicationCategory": "DeveloperTool",
+    "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Any",
     "description": "專業級線上 JSON 編輯器，支援格式化、驗證與壓縮。",
     "offers": {

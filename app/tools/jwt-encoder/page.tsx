@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: "JWT 生成器 (Encoder) | 線上製作 JSON Web Token",
   description: "免費線上 JWT 生成工具。自訂 Header 與 Payload，使用 Secret 進行 HMAC SHA256 簽署。純前端運算，適合開發與測試 Token。",
   keywords: ["JWT Generator", "JWT Encoder", "JWT Signer", "產生JWT", "線上Token製作"],
-  alternates: {
-    canonical: "/tools/jwt-encoder",
+  alternates: { canonical: "/tools/jwt-encoder" },
+  openGraph: {
+    title: "JWT 生成器 | DevTools",
+    description: "免費線上 JWT 生成工具。自訂 Header 與 Payload，使用 Secret 進行 HMAC SHA256 簽署，適合開發與測試。",
+  },
+  twitter: {
+    title: "JWT 生成器 | DevTools",
+    description: "免費線上 JWT 生成工具。自訂 Header 與 Payload，使用 Secret 進行 HMAC SHA256 簽署，適合開發與測試。",
   },
 };
 

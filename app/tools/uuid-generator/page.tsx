@@ -6,8 +6,14 @@ export const metadata: Metadata = {
   title: "UUID 生成器 (v1/v4) | 在線批量產 UUID",
   description: "免費、極速的線上 UUID 生成器。支援 UUID v1 (時間戳) 與 v4 (隨機)，可批量生成、移除連字號、大小寫轉換。開發者必備的 GUID 工具。",
   keywords: ["UUID生成器", "GUID Generator", "UUID v4", "UUID v1", "線上工具"],
-  alternates: {
-    canonical: "/tools/uuid-generator",
+  alternates: { canonical: "/tools/uuid-generator" },
+  openGraph: {
+    title: "UUID 生成器 (v1/v4) | DevTools",
+    description: "免費、極速的線上 UUID 生成器。支援 UUID v1 與 v4，可批量生成、移除連字號、大小寫轉換。",
+  },
+  twitter: {
+    title: "UUID 生成器 (v1/v4) | DevTools",
+    description: "免費、極速的線上 UUID 生成器。支援 UUID v1 與 v4，可批量生成、移除連字號、大小寫轉換。",
   },
 };
 

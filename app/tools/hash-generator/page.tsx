@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: "Hash 雜湊生成器 (MD5, SHA256) | 線上加密工具",
   description: "免費、安全的線上 Hash 計算器。支援 MD5, SHA-1, SHA-256, SHA-512 等多種演算法。純客戶端運算，您的數據絕不會傳送到伺服器。",
   keywords: ["Hash Generator", "MD5生成", "SHA256計算", "線上雜湊", "SHA1", "CryptoJS"],
-  alternates: {
-    canonical: "/tools/hash-generator",
+  alternates: { canonical: "/tools/hash-generator" },
+  openGraph: {
+    title: "Hash 雜湊生成器 (MD5, SHA256) | DevTools",
+    description: "免費、安全的線上 Hash 計算器。支援 MD5, SHA-1, SHA-256, SHA-512。純客戶端運算，資料不離開您的裝置。",
+  },
+  twitter: {
+    title: "Hash 雜湊生成器 (MD5, SHA256) | DevTools",
+    description: "免費、安全的線上 Hash 計算器。支援 MD5, SHA-1, SHA-256, SHA-512。純客戶端運算，資料不離開您的裝置。",
   },
 };
 

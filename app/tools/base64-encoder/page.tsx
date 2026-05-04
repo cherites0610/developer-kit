@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: "Base64 編碼/解碼器 (UTF-8 支援) | 線上轉換工具",
   description: "免費、極速的 Base64 線上轉換工具。完美支援中文 (UTF-8) 編碼與解碼，無亂碼，開發者專用。",
   keywords: ["Base64編碼", "Base64解碼", "Base64 Encoder", "Base64 Decoder", "UTF-8 Base64"],
-  alternates: {
-    canonical: "/tools/base64-encoder",
+  alternates: { canonical: "/tools/base64-encoder" },
+  openGraph: {
+    title: "Base64 編碼/解碼器 | DevTools",
+    description: "免費、極速的 Base64 線上轉換工具。完美支援中文 (UTF-8) 編碼與解碼，無亂碼，開發者專用。",
+  },
+  twitter: {
+    title: "Base64 編碼/解碼器 | DevTools",
+    description: "免費、極速的 Base64 線上轉換工具。完美支援中文 (UTF-8) 編碼與解碼，無亂碼，開發者專用。",
   },
 };
 

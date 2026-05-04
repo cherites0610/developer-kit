@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: "Lorem Ipsum 亂數假文生成器 | 排版測試工具",
   description: "免費線上 Lorem Ipsum 生成器。開發者專用，支援 HTML 標籤輸出，可自訂段落數量與長度，快速生成排版測試用文字。",
   keywords: ["Lorem Ipsum", "假文生成器", "亂數文字", "排版測試", "HTML生成", "Lorem Generator"],
-  alternates: {
-    canonical: "/tools/lorem-ipsum",
+  alternates: { canonical: "/tools/lorem-ipsum" },
+  openGraph: {
+    title: "Lorem Ipsum 亂數假文生成器 | DevTools",
+    description: "免費線上 Lorem Ipsum 生成器。支援 HTML 標籤輸出，可自訂段落數量與長度，快速生成排版測試用文字。",
+  },
+  twitter: {
+    title: "Lorem Ipsum 亂數假文生成器 | DevTools",
+    description: "免費線上 Lorem Ipsum 生成器。支援 HTML 標籤輸出，可自訂段落數量與長度，快速生成排版測試用文字。",
   },
 };
 

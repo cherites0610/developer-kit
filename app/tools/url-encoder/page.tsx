@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: "URL 編碼/解碼器 | Percent-encoding 線上工具",
   description: "免費線上 URL 編碼 (Encode) 與解碼 (Decode) 工具。支援 encodeURIComponent 與 encodeURI 兩種模式，完美處理中文參數與特殊符號。",
   keywords: ["URL Encode", "URL Decode", "網址編碼", "網址解碼", "URI Component", "Percent-encoding"],
-  alternates: {
-    canonical: "/tools/url-encoder",
+  alternates: { canonical: "/tools/url-encoder" },
+  openGraph: {
+    title: "URL 編碼/解碼器 | DevTools",
+    description: "免費線上 URL 編碼與解碼工具。支援 encodeURIComponent 與 encodeURI 兩種模式，完美處理中文與特殊符號。",
+  },
+  twitter: {
+    title: "URL 編碼/解碼器 | DevTools",
+    description: "免費線上 URL 編碼與解碼工具。支援 encodeURIComponent 與 encodeURI 兩種模式，完美處理中文與特殊符號。",
   },
 };
 

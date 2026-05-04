@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: "JWT 解碼器 (JSON Web Token Decoder) | Debugger",
   description: "免費線上 JWT 解碼工具。支援查看 Header, Payload 與 Signature。純客戶端解析，確保 Token 不會外洩，開發者除錯必備。",
   keywords: ["JWT Decoder", "JWT Debugger", "JSON Web Token", "Token解析", "JWT Viewer"],
-  alternates: {
-    canonical: "/tools/jwt-decoder",
+  alternates: { canonical: "/tools/jwt-decoder" },
+  openGraph: {
+    title: "JWT 解碼器 | DevTools",
+    description: "免費線上 JWT 解碼工具。支援查看 Header、Payload 與 Signature。純客戶端解析，Token 不會外洩。",
+  },
+  twitter: {
+    title: "JWT 解碼器 | DevTools",
+    description: "免費線上 JWT 解碼工具。支援查看 Header、Payload 與 Signature。純客戶端解析，Token 不會外洩。",
   },
 };
 

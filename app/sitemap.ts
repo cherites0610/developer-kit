@@ -13,8 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1,
   }))
 
-  // 2. 工具頁面 (目前只有 uuid-generator)
-  // 未來這裡可以讀取資料庫或常數陣列來動態生成
+  // 2. 工具頁面 (從 TOOLS_CONFIG 動態生成，自動排除 coming-soon)
   const tools = TOOLS_CONFIG
     .filter(tool => tool.status !== "coming-soon")
     .map((tool) => ({

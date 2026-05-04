@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: "時區轉換器 & 時間偏移模擬 | UTC vs Local Time",
   description: "開發者專用的時區轉換工具。即時對照本地時間與 UTC+0 時間，支援分鐘偏移模擬 (Offset Simulation)，方便測試系統時間誤差。亦支援 ISO 8601 格式轉換。",
   keywords: ["時區轉換", "Timezone Converter", "UTC轉換", "ISO 8601 Parser", "時間偏移測試"],
-  alternates: {
-    canonical: "/tools/timezone-converter",
+  alternates: { canonical: "/tools/timezone-converter" },
+  openGraph: {
+    title: "時區轉換器 & 時間偏移模擬 | DevTools",
+    description: "開發者專用的時區轉換工具。即時對照本地時間與 UTC+0，支援偏移模擬與 ISO 8601 格式轉換。",
+  },
+  twitter: {
+    title: "時區轉換器 & 時間偏移模擬 | DevTools",
+    description: "開發者專用的時區轉換工具。即時對照本地時間與 UTC+0，支援偏移模擬與 ISO 8601 格式轉換。",
   },
 };
 

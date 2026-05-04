@@ -2,11 +2,31 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { JsonLd } from './components/seo/json-ld'
 import { TOOLS_CONFIG } from './config/site'
 
+const SITE_URL = "https://kit.cherites.org"
+
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DevTools | 開發者工具箱",
+    "url": SITE_URL,
+    "description": "極速、純淨、無廣告的開發者線上工具箱。提供 UUID 生成、JSON 格式化、Base64 編碼等高頻工具。",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${SITE_URL}/tools/{search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      <JsonLd data={jsonLd} />
       {/* 1. Hero Section: 標題與願景 */}
       <section className="py-20 px-4 text-center space-y-6 max-w-4xl mx-auto">
         <Badge variant="outline" className="px-4 py-1 rounded-full border-zinc-700 text-zinc-400 bg-zinc-900/50 backdrop-blur">

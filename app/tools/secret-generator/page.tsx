@@ -6,8 +6,14 @@ export const metadata: Metadata = {
   title: "Secret 生成器 | JWT Secret、API Key、AES 金鑰",
   description: "安全、純瀏覽器端的密鑰生成工具。支援 JWT Secret (HS256/384/512)、API Key、隨機密碼、AES 加密金鑰，資料不離開您的裝置。",
   keywords: ["JWT Secret", "API Key Generator", "隨機密碼", "AES Key", "密鑰生成器", "Security"],
-  alternates: {
-    canonical: "/tools/secret-generator",
+  alternates: { canonical: "/tools/secret-generator" },
+  openGraph: {
+    title: "Secret 生成器 | DevTools",
+    description: "安全、純瀏覽器端的密鑰生成工具。支援 JWT Secret、API Key、隨機密碼、AES 金鑰，資料不離開您的裝置。",
+  },
+  twitter: {
+    title: "Secret 生成器 | DevTools",
+    description: "安全、純瀏覽器端的密鑰生成工具。支援 JWT Secret、API Key、隨機密碼、AES 金鑰，資料不離開您的裝置。",
   },
 };
 
