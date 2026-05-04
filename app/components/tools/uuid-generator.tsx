@@ -42,10 +42,13 @@ export default function UuidGenerator() {
         description: text,
         duration: 2000,
     });
+    generateUUIDs();
   };
 
   const copyAll = () => {
-    copyToClipboard(uuids.join("\n"));
+    navigator.clipboard.writeText(uuids.join("\n"));
+    toast.success("已複製全部到剪貼簿", { duration: 2000 });
+    generateUUIDs();
   };
 
   // --- 渲染 (Render) ---

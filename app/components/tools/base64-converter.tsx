@@ -55,12 +55,24 @@ export default function Base64Converter() {
     }
   };
 
-  // 切換模式時清空或交換
   const handleModeChange = (val: string) => {
-    setMode(val as "encode" | "decode");
-    setInput("");
-    setOutput("");
+    const newMode = val as "encode" | "decode";
+    setMode(newMode);
     setError(null);
+    if (output && !error) {
+      handleConvert(output, newMode);
+    } else {
+      setInput("");
+      setOutput("");
+    }
+  };
+
+  const swapContent = () => {
+    if (!output || error) return;
+    const newMode = mode === "encode" ? "decode" : "encode";
+    setMode(newMode);
+    setError(null);
+    handleConvert(output, newMode);
   };
 
   const copyToClipboard = () => {
@@ -77,7 +89,7 @@ export default function Base64Converter() {
 
   return (
     <div className="space-y-6">
-      <Tabs defaultValue="encode" onValueChange={handleModeChange} className="w-full">
+      <Tabs value={mode} onValueChange={handleModeChange} className="w-full">
         <TabsList className="grid w-full grid-cols-2 bg-zinc-900">
           <TabsTrigger value="encode">編碼 (Encode)</TabsTrigger>
           <TabsTrigger value="decode">解碼 (Decode)</TabsTrigger>
@@ -114,12 +126,22 @@ export default function Base64Converter() {
           <Card className="border-zinc-800 bg-zinc-900/50">
             <CardHeader className="pb-3 flex flex-row items-center justify-between">
               <CardTitle className="text-sm font-medium text-zinc-400 flex items-center gap-2">
-                <ArrowRightLeft className="w-4 h-4" />
                 {mode === "encode" ? "Base64 結果" : "解碼結果"}
               </CardTitle>
-              <Button variant="outline" size="sm" onClick={copyToClipboard} className="h-7 border-zinc-700 hover:bg-zinc-800 text-zinc-300">
-                <Copy className="mr-2 h-3 w-3" /> 複製
-              </Button>
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={swapContent}
+                  disabled={!output || !!error}
+                  className="h-7 border-zinc-600 bg-zinc-800 text-zinc-200 hover:bg-zinc-700 hover:text-white disabled:opacity-30"
+                >
+                  <ArrowRightLeft className="w-3.5 h-3.5 mr-1.5" /> 互換
+                </Button>
+                <Button variant="outline" size="sm" onClick={copyToClipboard} className="h-7 border-zinc-700 hover:bg-zinc-800 text-zinc-300">
+                  <Copy className="mr-2 h-3 w-3" /> 複製
+                </Button>
+              </div>
             </CardHeader>
             <CardContent>
               <div className="relative">

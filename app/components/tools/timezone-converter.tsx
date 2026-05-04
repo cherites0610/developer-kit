@@ -6,8 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { addMinutes, format, isValid, parseISO } from "date-fns"
-import { ArrowRightLeft, Clock, Globe, RotateCcw } from "lucide-react"
+import { ArrowRightLeft, Clock, Copy, Globe, RotateCcw } from "lucide-react"
 import { useEffect, useState } from "react"
+import { toast } from "sonner"
 
 export default function TimezoneConverter() {
   // --- State: Real-time Monitor ---
@@ -57,6 +58,11 @@ export default function TimezoneConverter() {
     } catch {
       setManualResult(null);
     }
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    toast.success("已複製", { description: text, duration: 2000 });
   };
 
   // 取得當前時區名稱 (e.g., Asia/Taipei)
@@ -121,8 +127,18 @@ export default function TimezoneConverter() {
            <CardContent className="p-6 grid sm:grid-cols-2 gap-8 h-full items-center">
               {/* UTC Time */}
               <div className="space-y-2">
-                <div className="flex items-center gap-2 text-zinc-500 text-xs font-mono uppercase tracking-wider">
-                  <Globe className="w-3 h-3" /> UTC / GMT (+0)
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-zinc-500 text-xs font-mono uppercase tracking-wider">
+                    <Globe className="w-3 h-3" /> UTC / GMT (+0)
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="h-7 px-2 border-zinc-600 bg-zinc-800 text-zinc-200 hover:bg-zinc-700 hover:text-white"
+                    onClick={() => now && copyToClipboard(adjustedTime.toISOString())}
+                  >
+                    <Copy className="w-3 h-3 mr-1.5" /> 複製
+                  </Button>
                 </div>
                 <div className="text-3xl md:text-4xl font-mono font-bold text-zinc-100 tabular-nums">
                   {now ? adjustedTime.toISOString().split('T')[1].split('.')[0] : "--:--:--"}
@@ -134,8 +150,18 @@ export default function TimezoneConverter() {
 
               {/* Local Time */}
               <div className="space-y-2 border-l border-zinc-800 pl-8 sm:border-l-0 sm:pl-0 sm:relative sm:before:absolute sm:before:left-[-1px] sm:before:top-0 sm:before:bottom-0 sm:before:w-[1px] sm:before:bg-zinc-800">
-                 <div className="flex items-center gap-2 text-blue-400 text-xs font-mono uppercase tracking-wider">
-                  <Clock className="w-3 h-3" /> {getTimezoneName()}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-blue-400 text-xs font-mono uppercase tracking-wider">
+                    <Clock className="w-3 h-3" /> {getTimezoneName()}
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="h-7 px-2 border-zinc-600 bg-zinc-800 text-zinc-200 hover:bg-zinc-700 hover:text-white"
+                    onClick={() => now && copyToClipboard(format(adjustedTime, "yyyy-MM-dd'T'HH:mm:ssXXX"))}
+                  >
+                    <Copy className="w-3 h-3 mr-1.5" /> 複製
+                  </Button>
                 </div>
                 <div className="text-3xl md:text-4xl font-mono font-bold text-white tabular-nums">
                   {now ? format(adjustedTime, "HH:mm:ss") : "--:--:--"}
@@ -174,13 +200,33 @@ export default function TimezoneConverter() {
               {manualResult && (
                 <div className="grid md:grid-cols-2 gap-4 animate-in fade-in slide-in-from-top-2 duration-300">
                    <div className="p-4 rounded-lg bg-zinc-950 border border-zinc-800 space-y-1">
-                      <div className="text-xs text-zinc-500">UTC Time (Universal)</div>
+                      <div className="flex items-center justify-between">
+                        <div className="text-xs text-zinc-500">UTC Time (Universal)</div>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 px-2 border-zinc-600 bg-zinc-800 text-zinc-200 hover:bg-zinc-700 hover:text-white"
+                          onClick={() => copyToClipboard(manualResult.utc)}
+                        >
+                          <Copy className="w-3 h-3 mr-1.5" /> 複製
+                        </Button>
+                      </div>
                       <div className="font-mono text-lg text-zinc-200 select-all">
                         {manualResult.utc}
                       </div>
                    </div>
                    <div className="p-4 rounded-lg bg-zinc-950 border border-zinc-800 space-y-1">
-                      <div className="text-xs text-blue-400">Local Time ({getTimezoneName()})</div>
+                      <div className="flex items-center justify-between">
+                        <div className="text-xs text-blue-400">Local Time ({getTimezoneName()})</div>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-7 px-2 border-zinc-600 bg-zinc-800 text-zinc-200 hover:bg-zinc-700 hover:text-white"
+                          onClick={() => copyToClipboard(manualResult.local)}
+                        >
+                          <Copy className="w-3 h-3 mr-1.5" /> 複製
+                        </Button>
+                      </div>
                       <div className="font-mono text-lg text-white select-all">
                         {manualResult.local}
                       </div>

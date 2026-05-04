@@ -51,10 +51,30 @@ export default function UrlEncoder() {
     }
   };
 
-  // 當模式或選項改變時重新計算
+  // encodeAll 切換時重新計算
   useEffect(() => {
     handleConvert(input, mode, encodeAll);
-  }, [mode, encodeAll]);
+  }, [encodeAll]);
+
+  const handleModeChange = (val: string) => {
+    const newMode = val as "encode" | "decode";
+    setMode(newMode);
+    setError(null);
+    if (output && !error) {
+      handleConvert(output, newMode, encodeAll);
+    } else {
+      setInput("");
+      setOutput("");
+    }
+  };
+
+  const swapContent = () => {
+    if (!output || error) return;
+    const newMode = mode === "encode" ? "decode" : "encode";
+    setMode(newMode);
+    setError(null);
+    handleConvert(output, newMode, encodeAll);
+  };
 
   const copyToClipboard = () => {
     if (!output) return;
@@ -70,7 +90,7 @@ export default function UrlEncoder() {
 
   return (
     <div className="space-y-6">
-      <Tabs defaultValue="encode" onValueChange={(v) => setMode(v as any)} className="w-full">
+      <Tabs value={mode} onValueChange={handleModeChange} className="w-full">
         <TabsList className="grid w-full grid-cols-2 bg-zinc-900">
           <TabsTrigger value="encode">編碼 (Encode)</TabsTrigger>
           <TabsTrigger value="decode">解碼 (Decode)</TabsTrigger>
@@ -127,9 +147,20 @@ export default function UrlEncoder() {
                    <ArrowRightLeft className="w-4 h-4" />
                    {error ? <span className="text-red-400">轉換錯誤</span> : "轉換結果"}
                 </div>
-                <Button variant="outline" size="sm" onClick={copyToClipboard} className="h-7 text-xs border-zinc-700 bg-zinc-800 hover:bg-zinc-700">
-                  <Copy className="mr-2 h-3 w-3" /> 複製結果
-                </Button>
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={swapContent}
+                    disabled={!output || !!error}
+                    className="h-7 text-xs border-zinc-600 bg-zinc-800 text-zinc-200 hover:bg-zinc-700 hover:text-white disabled:opacity-30"
+                  >
+                    <ArrowRightLeft className="w-3.5 h-3.5 mr-1.5" /> 互換
+                  </Button>
+                  <Button variant="outline" size="sm" onClick={copyToClipboard} className="h-7 text-xs border-zinc-700 bg-zinc-800 hover:bg-zinc-700">
+                    <Copy className="mr-2 h-3 w-3" /> 複製結果
+                  </Button>
+                </div>
               </CardTitle>
             </CardHeader>
             <CardContent className="flex-1 p-0 relative">

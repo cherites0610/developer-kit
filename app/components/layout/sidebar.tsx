@@ -69,7 +69,7 @@ export function DesktopSidebar({ className }: React.HTMLAttributes<HTMLDivElemen
       </div>
 
       <div className="absolute bottom-4 px-3 w-full">
-        <Link href="https://github.com" target="_blank">
+        <Link href="https://github.com/cherites0610/developer-kit" target="_blank">
             <Button variant="outline" className="w-full border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800">
                 <Github className="mr-2 h-4 w-4" /> GitHub
             </Button>

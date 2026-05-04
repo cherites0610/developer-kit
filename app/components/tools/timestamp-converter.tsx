@@ -137,21 +137,24 @@ export default function TimestampConverter() {
              </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-             <div className="relative">
-                <Input
-                  value={tsInput}
-                  onChange={(e) => handleTsChange(e.target.value)}
-                  className="font-mono text-lg h-12 bg-zinc-950 border-zinc-800 focus:border-blue-500"
-                  placeholder="e.g. 1678888888"
-                />
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => copyToClipboard(tsInput)}
-                  className="absolute right-1 top-1 h-10 text-zinc-500 hover:text-white"
-                >
-                  <Copy className="h-4 w-4" />
-                </Button>
+             <div className="space-y-1.5">
+               <label className="text-xs text-zinc-500">輸入或貼上時間戳</label>
+               <div className="relative">
+                  <Input
+                    value={tsInput}
+                    onChange={(e) => handleTsChange(e.target.value)}
+                    className="font-mono text-lg h-12 bg-zinc-900 border-zinc-600 hover:border-zinc-400 focus:border-blue-500 transition-colors pr-10"
+                    placeholder="e.g. 1678888888"
+                  />
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => copyToClipboard(tsInput)}
+                    className="absolute right-1 top-1 h-10 text-zinc-500 hover:text-white"
+                  >
+                    <Copy className="h-4 w-4" />
+                  </Button>
+               </div>
              </div>
 
              <div className="flex gap-2">
@@ -168,15 +171,15 @@ export default function TimestampConverter() {
              <CardTitle className="text-sm text-zinc-400">Date & Time (Local)</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-             <div className="relative">
-                {/* 使用原生 datetime-local，樣式簡單但在所有瀏覽器都原生支援 */}
-                <Input
-                  type="datetime-local"
-                  step="1" // 允許秒數選擇
-                  value={dateInput}
-                  onChange={(e) => handleDateChange(e.target.value)}
-                  className="font-mono text-lg h-12 bg-zinc-950 border-zinc-800 focus:border-blue-500 [color-scheme:dark]"
-                />
+             <div className="space-y-1.5">
+               <label className="text-xs text-zinc-500">選擇或輸入日期時間</label>
+               <Input
+                 type="datetime-local"
+                 step="1"
+                 value={dateInput}
+                 onChange={(e) => handleDateChange(e.target.value)}
+                 className="font-mono text-lg h-12 bg-zinc-900 border-zinc-600 hover:border-zinc-400 focus:border-blue-500 transition-colors [color-scheme:dark]"
+               />
              </div>
 
              {/* 顯示 UTC / ISO 預覽 */}

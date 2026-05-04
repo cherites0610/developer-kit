@@ -2,6 +2,8 @@ import { Toaster } from "@/components/ui/sonner"
 import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import { Github } from "lucide-react"
+import Link from "next/link"
 import { AppShell } from './components/layout/app-shell'
 import "./globals.css"
 const geistSans = Geist({
@@ -81,6 +83,18 @@ export default function RootLayout({
         <AppShell>
           {children}
         </AppShell>
+
+        <Link
+          href="https://github.com/cherites0610/developer-kit"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="View source on GitHub"
+          className="fixed top-0 right-0 z-50 group"
+        >
+          <div className="w-20 h-20 [clip-path:polygon(0_0,100%_0,100%_100%)] bg-zinc-100 group-hover:bg-white transition-colors flex items-start justify-end p-3">
+            <Github className="w-5 h-5 text-zinc-900" />
+          </div>
+        </Link>
 
         <Toaster />
       </body>

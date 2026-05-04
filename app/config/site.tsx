@@ -2,6 +2,7 @@ import {
   Clock,
   Database,
   FileJson,
+  Fingerprint,
   Globe,
   Hash,
   Key,
@@ -120,9 +121,17 @@ export const TOOLS_CONFIG: ToolItem[] = [
     slug: "jwt-encoder",
     title: "JWT 生成器",
     description: "自訂 Payload 並簽署 JWT Token，方便測試 API 權限。",
-    icon: Key, // 使用不同的 icon
+    icon: Key,
     status: "new",
     tags: ["Auth", "Generator"],
+  },
+  {
+    slug: "secret-generator",
+    title: "Secret 生成器",
+    description: "安全產生 JWT Secret、API Key、隨機密碼與 AES 金鑰，純瀏覽器端執行。",
+    icon: Fingerprint,
+    status: "new",
+    tags: ["Security", "Generator"],
   },
 ];
 
