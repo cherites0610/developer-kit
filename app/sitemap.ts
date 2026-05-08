@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter(tool => tool.status !== "coming-soon")
     .map((tool) => ({
       url: `${SITE_URL}/tools/${tool.slug}`,
-      lastModified: new Date().toISOString(),
+      lastModified: new Date(tool.lastModified).toISOString(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     }))

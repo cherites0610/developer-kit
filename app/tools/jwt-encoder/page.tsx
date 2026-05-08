@@ -1,7 +1,19 @@
 import { Key } from "lucide-react"
 import { Metadata } from "next"
+import { Breadcrumb } from '../../components/seo/breadcrumb'
 import { JsonLd } from '../../components/seo/json-ld'
+import { RelatedTools } from '../../components/tools/related-tools'
 import JwtEncoder from '../../components/tools/jwt-encoder'
+
+const SITE_URL = "https://kit.cherites.org"
+const SLUG = "jwt-encoder"
+const TITLE = "JWT 生成器"
+const ogImage = {
+  url: `/og?title=${encodeURIComponent(TITLE)}&desc=${encodeURIComponent("自訂 Payload，HMAC HS256 簽署，方便測試 API 權限")}&tag=Auth`,
+  width: 1200,
+  height: 630,
+  alt: `${TITLE} | DevTools`,
+}
 
 export const metadata: Metadata = {
   title: "JWT 生成器 (Encoder) | 線上製作 JSON Web Token",
@@ -11,33 +23,66 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JWT 生成器 | DevTools",
     description: "免費線上 JWT 生成工具。自訂 Header 與 Payload，使用 Secret 進行 HMAC SHA256 簽署，適合開發與測試。",
+    images: [ogImage],
   },
   twitter: {
     title: "JWT 生成器 | DevTools",
     description: "免費線上 JWT 生成工具。自訂 Header 與 Payload，使用 Secret 進行 HMAC SHA256 簽署，適合開發與測試。",
+    images: [ogImage.url],
   },
 };
 
 export default function JwtEncoderPage() {
-  const jsonLd = {
+  const appLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "JWT Generator",
-    "applicationCategory": "DeveloperTool",
+    "url": `${SITE_URL}/tools/${SLUG}`,
+    "applicationCategory": "DeveloperApplication",
+    "applicationSubCategory": "Authentication Tool",
     "operatingSystem": "Any",
     "description": "線上 JWT 簽署與生成工具。",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-    },
+    "featureList": "JWT 簽署, HS256 支援, 自訂 Payload, 自訂 Header, 純客戶端",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  };
+
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "如何使用 JWT 生成器測試 API 權限？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "您可以修改 Payload 中的欄位來模擬不同場景：修改 admin: true 測試管理員權限；修改 exp 欄位為過去的時間戳來製作一個已過期的 Token；更改 sub（Subject）來模擬不同用戶身份。",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "HS256 是什麼演算法？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HS256（HMAC with SHA-256）是一種使用對稱密鑰的 JWT 簽署演算法。簽發和驗證使用相同的 Secret Key，適合服務端自行簽發和驗證的場景。相對地，RS256 使用非對稱金鑰，適合分散式系統。",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "這個工具安全嗎？可以輸入真實 Secret 嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本工具為純客戶端運算，輸入的資料不會傳送到伺服器。但即便如此，仍建議不要在公用設備上輸入真實生產環境（Production）的 Secret Key，僅建議用於開發環境（Local/Dev）的測試數據。",
+        },
+      },
+    ],
   };
 
   return (
     <main className="container mx-auto px-4 py-12 max-w-6xl">
-      <JsonLd data={jsonLd} />
+      <JsonLd data={appLd} />
+      <JsonLd data={faqLd} />
+      <Breadcrumb toolTitle={TITLE} toolSlug={SLUG} />
 
-      {/* Top Section */}
       <section className="mb-12 text-center space-y-4">
         <div className="flex items-center justify-center gap-3">
           <div className="p-3 bg-zinc-900 rounded-full border border-zinc-800">
@@ -53,12 +98,10 @@ export default function JwtEncoderPage() {
         </p>
       </section>
 
-      {/* Tool Section */}
       <section className="mb-20">
         <JwtEncoder />
       </section>
 
-      {/* Rich Content / SEO */}
       <section className="prose prose-invert mx-auto border-t border-border pt-10 max-w-4xl">
         <article className="space-y-6 text-muted-foreground">
           <h2 className="text-2xl font-bold text-foreground">如何使用 JWT 生成器？</h2>
@@ -78,6 +121,8 @@ export default function JwtEncoderPage() {
           </p>
         </article>
       </section>
+
+      <RelatedTools relatedSlugs={["jwt-decoder", "secret-generator"]} />
     </main>
   );
 }

@@ -1,7 +1,19 @@
 import { Type } from "lucide-react"
 import { Metadata } from "next"
+import { Breadcrumb } from '../../components/seo/breadcrumb'
 import { JsonLd } from '../../components/seo/json-ld'
+import { RelatedTools } from '../../components/tools/related-tools'
 import LoremGenerator from '../../components/tools/lorem-generator'
+
+const SITE_URL = "https://kit.cherites.org"
+const SLUG = "lorem-ipsum"
+const TITLE = "亂數假文生成"
+const ogImage = {
+  url: `/og?title=${encodeURIComponent(TITLE)}&desc=${encodeURIComponent("Lorem Ipsum 假文生成，支援 HTML 輸出，排版測試專用")}&tag=Generator`,
+  width: 1200,
+  height: 630,
+  alt: `${TITLE} | DevTools`,
+}
 
 export const metadata: Metadata = {
   title: "Lorem Ipsum 亂數假文生成器 | 排版測試工具",
@@ -11,33 +23,66 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lorem Ipsum 亂數假文生成器 | DevTools",
     description: "免費線上 Lorem Ipsum 生成器。支援 HTML 標籤輸出，可自訂段落數量與長度，快速生成排版測試用文字。",
+    images: [ogImage],
   },
   twitter: {
     title: "Lorem Ipsum 亂數假文生成器 | DevTools",
     description: "免費線上 Lorem Ipsum 生成器。支援 HTML 標籤輸出，可自訂段落數量與長度，快速生成排版測試用文字。",
+    images: [ogImage.url],
   },
 };
 
 export default function LoremPage() {
-  const jsonLd = {
+  const appLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Lorem Ipsum Generator",
-    "applicationCategory": "DeveloperTool",
+    "url": `${SITE_URL}/tools/${SLUG}`,
+    "applicationCategory": "DeveloperApplication",
+    "applicationSubCategory": "Text Generator",
     "operatingSystem": "Any",
     "description": "Lorem Ipsum 假文生成工具，支援 HTML 輸出。",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-    },
+    "featureList": "Lorem Ipsum 生成, 自訂段落數量, HTML 格式輸出, 自訂文字長度",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  };
+
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Lorem Ipsum 是什麼語言？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lorem Ipsum 是拉丁文（Latin），源自西元前 1 世紀羅馬政治家西塞羅（Cicero）的著作《De Finibus Bonorum et Malorum》。它是原文的隨機摘取與重新排列，因此雖然看起來像是正常文章，但實際上沒有完整意義。",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "為什麼設計師要使用假文而不是真實內容？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "使用真實文字時，閱讀者容易被內容吸引而忽略版面設計本身。Lorem Ipsum 因其類似真實文章的字母分佈，讓設計師和客戶能夠專注於評估字型選擇、行距、版面配置和視覺層次，而不受文字內容的影響。",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "Lorem Ipsum 可以用於正式發布的產品嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不建議。Lorem Ipsum 僅適合設計和開發階段的版面測試（Placeholder Text）。正式發布前應替換為真實的產品文案，以確保最終內容與設計相符。",
+        },
+      },
+    ],
   };
 
   return (
     <main className="container mx-auto px-4 py-12 max-w-5xl">
-      <JsonLd data={jsonLd} />
+      <JsonLd data={appLd} />
+      <JsonLd data={faqLd} />
+      <Breadcrumb toolTitle={TITLE} toolSlug={SLUG} />
 
-      {/* Top Section */}
       <section className="mb-12 text-center space-y-4">
         <div className="flex items-center justify-center gap-3">
           <div className="p-3 bg-zinc-900 rounded-full border border-zinc-800">
@@ -53,12 +98,10 @@ export default function LoremPage() {
         </p>
       </section>
 
-      {/* Tool Section */}
       <section className="mb-20">
         <LoremGenerator />
       </section>
 
-      {/* Rich Content / SEO */}
       <section className="prose prose-invert mx-auto border-t border-border pt-10 max-w-4xl">
         <article className="space-y-6 text-muted-foreground">
           <h2 className="text-2xl font-bold text-foreground">什麼是 Lorem Ipsum？</h2>
@@ -75,10 +118,12 @@ export default function LoremPage() {
 
           <h3 className="text-xl font-bold text-foreground">標準開頭</h3>
           <blockquote className="border-l-4 border-zinc-700 pl-4 italic text-zinc-400">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;
           </blockquote>
         </article>
       </section>
+
+      <RelatedTools relatedSlugs={["uuid-generator"]} />
     </main>
   );
 }

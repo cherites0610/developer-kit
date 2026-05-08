@@ -8,7 +8,7 @@ import { TOOLS_CONFIG } from './config/site'
 const SITE_URL = "https://kit.cherites.org"
 
 export default function Home() {
-  const jsonLd = {
+  const websiteLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "DevTools | 開發者工具箱",
@@ -24,9 +24,28 @@ export default function Home() {
     }
   };
 
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "開發者工具清單",
+    "description": "DevTools 提供的所有線上開發工具",
+    "url": SITE_URL,
+    "numberOfItems": TOOLS_CONFIG.filter(t => t.status !== "coming-soon").length,
+    "itemListElement": TOOLS_CONFIG
+      .filter(t => t.status !== "coming-soon")
+      .map((tool, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": tool.title,
+        "description": tool.description,
+        "url": `${SITE_URL}/tools/${tool.slug}`,
+      })),
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
-      <JsonLd data={jsonLd} />
+      <JsonLd data={websiteLd} />
+      <JsonLd data={itemListLd} />
       {/* 1. Hero Section: 標題與願景 */}
       <section className="py-20 px-4 text-center space-y-6 max-w-4xl mx-auto">
         <Badge variant="outline" className="px-4 py-1 rounded-full border-zinc-700 text-zinc-400 bg-zinc-900/50 backdrop-blur">

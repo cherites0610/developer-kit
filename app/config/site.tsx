@@ -16,26 +16,27 @@ import {
 } from "lucide-react"
 
 export interface ToolItem {
-  slug: string;       // 路由路徑 (如 uuid-generator)
-  title: string;      // 顯示標題
-  description: string;// 短描述 (用於首頁卡片)
-  icon: LucideIcon;   // 圖示組件
+  slug: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
   status: "new" | "hot" | "beta" | "coming-soon" | "stable";
-  tags: string[];     // 標籤
+  tags: string[];
+  lastModified: string;
+  related: string[];
 }
 
-// 這裡定義所有工具，這是唯一的維護點！
 export const TOOLS_CONFIG: ToolItem[] = [
-  // 1. UUID (已完成)
   {
     slug: "uuid-generator",
     title: "UUID 生成器",
     description: "批量生成 UUID v1/v4，支援大小寫轉換與移除連字號，極速響應。",
     icon: Hash,
-    status: "stable", // 改為 stable 代表功能穩定
+    status: "stable",
     tags: ["Generator", "GUID"],
+    lastModified: "2026-04-01",
+    related: ["hash-generator", "secret-generator"],
   },
-  // 2. Base64 (已完成)
   {
     slug: "base64-encoder",
     title: "Base64 編碼/解碼",
@@ -43,20 +44,19 @@ export const TOOLS_CONFIG: ToolItem[] = [
     icon: Lock,
     status: "stable",
     tags: ["Encoder", "Security"],
+    lastModified: "2026-04-01",
+    related: ["url-encoder", "hash-generator"],
   },
-  // 3. JSON (已完成)
   {
     slug: "json-formatter",
     title: "JSON 格式化/校驗",
     description: "美化 JSON 數據，語法高亮與錯誤檢測，支援壓縮模式。",
     icon: FileJson,
-    status: "hot", // 剛做好的主打功能
+    status: "hot",
     tags: ["Formatter", "Dev"],
+    lastModified: "2026-04-01",
+    related: ["jwt-decoder", "url-encoder"],
   },
-
-  // --- 以下為新增的規劃 (Coming Soon) ---
-
-  // 4. Timestamp (高頻需求)
   {
     slug: "timestamp-converter",
     title: "Unix 時間戳轉換",
@@ -64,6 +64,8 @@ export const TOOLS_CONFIG: ToolItem[] = [
     icon: Clock,
     status: "stable",
     tags: ["Converter", "Date"],
+    lastModified: "2026-04-01",
+    related: ["timezone-converter"],
   },
   {
     slug: "timezone-converter",
@@ -72,8 +74,9 @@ export const TOOLS_CONFIG: ToolItem[] = [
     icon: Globe,
     status: "stable",
     tags: ["Timezone", "ISO"],
+    lastModified: "2026-04-01",
+    related: ["timestamp-converter"],
   },
-  // 5. URL Encode (API 除錯必備)
   {
     slug: "url-encoder",
     title: "URL 編碼/解碼",
@@ -81,8 +84,9 @@ export const TOOLS_CONFIG: ToolItem[] = [
     icon: LinkIcon,
     status: "stable",
     tags: ["Encoder", "Web"],
+    lastModified: "2026-04-01",
+    related: ["base64-encoder", "json-formatter"],
   },
-  // 6. SQL Formatter (可複用 Monaco Editor)
   {
     slug: "sql-formatter",
     title: "SQL 格式化工具",
@@ -90,8 +94,9 @@ export const TOOLS_CONFIG: ToolItem[] = [
     icon: Database,
     status: "coming-soon",
     tags: ["Formatter", "DB"],
+    lastModified: "2026-04-01",
+    related: ["json-formatter"],
   },
-  // 7. Hash Generator (前端加密)
   {
     slug: "hash-generator",
     title: "Hash 雜湊生成器",
@@ -99,8 +104,9 @@ export const TOOLS_CONFIG: ToolItem[] = [
     icon: ShieldCheck,
     status: "stable",
     tags: ["Security", "Crypto"],
+    lastModified: "2026-04-01",
+    related: ["base64-encoder", "secret-generator"],
   },
-  // 8. Lorem Ipsum (UI 開發必備)
   {
     slug: "lorem-ipsum",
     title: "亂數假文生成",
@@ -108,6 +114,8 @@ export const TOOLS_CONFIG: ToolItem[] = [
     icon: Type,
     status: "stable",
     tags: ["Generator", "Design"],
+    lastModified: "2026-04-01",
+    related: ["uuid-generator"],
   },
   {
     slug: "jwt-decoder",
@@ -116,6 +124,8 @@ export const TOOLS_CONFIG: ToolItem[] = [
     icon: KeyRound,
     status: "new",
     tags: ["Auth", "Security"],
+    lastModified: "2026-04-20",
+    related: ["jwt-encoder", "secret-generator"],
   },
   {
     slug: "jwt-encoder",
@@ -124,6 +134,8 @@ export const TOOLS_CONFIG: ToolItem[] = [
     icon: Key,
     status: "new",
     tags: ["Auth", "Generator"],
+    lastModified: "2026-04-20",
+    related: ["jwt-decoder", "secret-generator"],
   },
   {
     slug: "secret-generator",
@@ -132,6 +144,8 @@ export const TOOLS_CONFIG: ToolItem[] = [
     icon: Fingerprint,
     status: "new",
     tags: ["Security", "Generator"],
+    lastModified: "2026-05-07",
+    related: ["jwt-decoder", "jwt-encoder", "hash-generator"],
   },
 ];
 
