@@ -43,6 +43,7 @@ export default function SecretGeneratorPage() {
     "description": "安全、純瀏覽器端的密鑰生成工具，支援 JWT Secret、API Key、隨機密碼與 AES 金鑰。",
     "featureList": "JWT Secret 生成, API Key 生成, 隨機密碼生成, AES 金鑰生成, Web Crypto API",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

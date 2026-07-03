@@ -44,6 +44,7 @@ export default function TimezonePage() {
     "description": "UTC 與本地時區即時轉換，支援時間偏移模擬。",
     "featureList": "UTC 時間轉換, 本地時間對照, 時間偏移模擬, ISO 8601 解析",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

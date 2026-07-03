@@ -1,0 +1,27 @@
+# DevTools | 開發者工具箱
+
+> 極速、純淨、無廣告的開發者線上工具箱，由廖柏安開發與維護。所有工具皆於瀏覽器端（client-side）執行，不上傳使用者輸入的資料，免費、免登入、免安裝。網站語言為繁體中文（zh-TW）。
+
+網站網址：https://kit.cherites.org
+作者：廖柏安（GitHub: https://github.com/cherites0610）
+原始碼：https://github.com/cherites0610/developer-kit
+
+## 工具列表
+
+- [UUID 生成器](https://kit.cherites.org/tools/uuid-generator): 批量生成 UUID v1/v4，支援大小寫轉換與移除連字號
+- [Base64 編碼/解碼](https://kit.cherites.org/tools/base64-encoder): 支援 UTF-8 中文的 Base64 轉換器
+- [JSON 格式化/校驗](https://kit.cherites.org/tools/json-formatter): 美化 JSON 數據，語法高亮與錯誤檢測，支援壓縮模式
+- [Unix 時間戳轉換](https://kit.cherites.org/tools/timestamp-converter): 在 Unix Timestamp 與人類可讀日期之間互轉，支援秒/毫秒
+- [時區轉換/偏移](https://kit.cherites.org/tools/timezone-converter): UTC 與本地時間即時對照，支援時間偏移模擬測試
+- [URL 編碼/解碼](https://kit.cherites.org/tools/url-encoder): 將 URL 特殊字符轉換為百分號編碼
+- [Hash 雜湊生成器](https://kit.cherites.org/tools/hash-generator): 計算文字的 MD5, SHA-1, SHA-256 雜湊值（純瀏覽器端執行）
+- [假文產生器](https://kit.cherites.org/tools/lorem-ipsum): 生成 Lorem Ipsum、中文假文、數字資料與模擬訂單
+- [JWT 解碼器](https://kit.cherites.org/tools/jwt-decoder): 解析 JWT Token 結構（Header, Payload）
+- [JWT 生成器](https://kit.cherites.org/tools/jwt-encoder): 自訂 Payload 並簽署 JWT Token
+- [Secret 生成器](https://kit.cherites.org/tools/secret-generator): 產生 JWT Secret、API Key、隨機密碼與 AES 金鑰
+- [Cron 表達式計算器](https://kit.cherites.org/tools/cron-calculator): 驗證 crontab 語法、翻譯成中文說明、計算下次執行時間
+
+## 補充說明
+
+- 每個工具頁皆有 FAQ 與使用說明，可作為問答摘要的來源。
+- SQL 格式化工具為開發中（coming soon），尚未上線。

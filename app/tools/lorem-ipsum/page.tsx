@@ -44,6 +44,7 @@ export default function LoremPage() {
     "description": "假文與測試資料產生器，支援 Lorem Ipsum、中文假文、數字資料與模擬訂單，HTML 輸出。",
     "featureList": "Lorem Ipsum 生成, 中文假文生成, 手機號碼/統編/信用卡等數字資料, 模擬訂單資料(CSV/JSON), 自訂段落數量, HTML 格式輸出",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   description: "極速、純淨、無廣告的開發者線上工具箱。提供 UUID 生成、JSON 格式化、Base64 編碼等高頻工具，專為程式設計師打造。",
   keywords: ["開發者工具", "UUID生成器", "JSON格式化", "Base64解碼", "線上工具", "DevTools"],
-  authors: [{ name: "DevTools Team" }],
-  creator: "DevTools Team",
+  authors: [{ name: "廖柏安", url: "https://github.com/cherites0610" }],
+  creator: "廖柏安",
   openGraph: {
     type: "website",
     locale: "zh_TW",

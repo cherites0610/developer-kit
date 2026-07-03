@@ -14,6 +14,7 @@ export default function Home() {
     "name": "DevTools | 開發者工具箱",
     "url": SITE_URL,
     "description": "極速、純淨、無廣告的開發者線上工具箱。提供 UUID 生成、JSON 格式化、Base64 編碼等高頻工具。",
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
     "potentialAction": {
       "@type": "SearchAction",
       "target": {

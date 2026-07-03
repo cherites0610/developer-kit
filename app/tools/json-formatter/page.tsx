@@ -45,6 +45,7 @@ export default function JsonPage() {
     "description": "專業級線上 JSON 編輯器，支援格式化、驗證與壓縮。",
     "featureList": "JSON 格式化, JSON 壓縮, 語法高亮, 錯誤檢測, Monaco Editor",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

@@ -44,6 +44,7 @@ export default function JwtPage() {
     "description": "線上 JWT 解析與除錯工具。",
     "featureList": "JWT 解碼, Header 解析, Payload 解析, 過期時間計算, 純客戶端",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

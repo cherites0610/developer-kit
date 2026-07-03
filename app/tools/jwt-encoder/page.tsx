@@ -44,6 +44,7 @@ export default function JwtEncoderPage() {
     "description": "線上 JWT 簽署與生成工具。",
     "featureList": "JWT 簽署, HS256 支援, 自訂 Payload, 自訂 Header, 純客戶端",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

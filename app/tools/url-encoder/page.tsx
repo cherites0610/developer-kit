@@ -44,6 +44,7 @@ export default function UrlEncoderPage() {
     "description": "線上 URL 特殊字符編碼與還原工具。",
     "featureList": "URL 編碼, URL 解碼, encodeURIComponent 模式, encodeURI 模式, 中文支援",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

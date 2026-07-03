@@ -44,6 +44,7 @@ export default function CronCalculatorPage() {
     "description": "Cron 表達式驗證與計算工具，支援中文翻譯與下次執行時間預測。",
     "featureList": "Cron 語法驗證, 中文人類可讀翻譯, 下次執行時間計算, 常用排程範本, 視覺化欄位編輯器",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

@@ -43,6 +43,7 @@ export default function Base64Page() {
     "description": "線上 Base64 編碼與解碼工具，支援 UTF-8 中文字符。",
     "featureList": "Base64 編碼, Base64 解碼, UTF-8 中文支援, Emoji 支援",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

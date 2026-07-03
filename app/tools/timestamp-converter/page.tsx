@@ -44,6 +44,7 @@ export default function TimestampPage() {
     "description": "Unix 時間戳與日期時間互轉工具。",
     "featureList": "Unix 時間戳轉換, 秒毫秒互轉, 即時時間戳顯示, UTC 轉換, ISO 8601 輸出",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

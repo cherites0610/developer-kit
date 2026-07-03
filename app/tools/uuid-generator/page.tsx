@@ -43,6 +43,7 @@ export default function UuidPage() {
     "description": "免費、極速的線上 UUID 生成器，支援 v1 與 v4 版本。",
     "featureList": "UUID v1 生成, UUID v4 生成, 批量生成, 移除連字號, 大小寫轉換",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {

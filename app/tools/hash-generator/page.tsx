@@ -44,6 +44,7 @@ export default function HashPage() {
     "description": "支援 MD5, SHA-256 等多種演算法的線上雜湊生成器。",
     "featureList": "MD5 雜湊, SHA-1 雜湊, SHA-256 雜湊, SHA-512 雜湊, 即時計算",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "廖柏安", "url": "https://github.com/cherites0610" },
   };
 
   const faqLd = {
