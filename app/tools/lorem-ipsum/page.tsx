@@ -7,27 +7,27 @@ import LoremGenerator from '../../components/tools/lorem-generator'
 
 const SITE_URL = "https://kit.cherites.org"
 const SLUG = "lorem-ipsum"
-const TITLE = "亂數假文生成"
+const TITLE = "假文產生器"
 const ogImage = {
-  url: `/og?title=${encodeURIComponent(TITLE)}&desc=${encodeURIComponent("Lorem Ipsum 假文生成，支援 HTML 輸出，排版測試專用")}&tag=Generator`,
+  url: `/og?title=${encodeURIComponent(TITLE)}&desc=${encodeURIComponent("Lorem Ipsum、中文假文、數字資料、模擬訂單，一鍵生成測試資料")}&tag=Generator`,
   width: 1200,
   height: 630,
   alt: `${TITLE} | DevTools`,
 }
 
 export const metadata: Metadata = {
-  title: "Lorem Ipsum 亂數假文生成器 | 排版測試工具",
-  description: "免費線上 Lorem Ipsum 生成器。開發者專用，支援 HTML 標籤輸出，可自訂段落數量與長度，快速生成排版測試用文字。",
-  keywords: ["Lorem Ipsum", "假文生成器", "亂數文字", "排版測試", "HTML生成", "Lorem Generator"],
+  title: "假文產生器 | Lorem Ipsum／中文假文／模擬訂單測試資料",
+  description: "免費假文產生器，支援 Lorem Ipsum、中文假文、手機號碼／統編等數字資料、模擬訂單，一鍵生成排版與測試用假資料，無廣告即開即用。",
+  keywords: ["假文產生器", "Lorem Ipsum", "中文假文", "測試資料產生器", "模擬訂單", "假資料產生器", "占位文字"],
   alternates: { canonical: "/tools/lorem-ipsum" },
   openGraph: {
-    title: "Lorem Ipsum 亂數假文生成器 | DevTools",
-    description: "免費線上 Lorem Ipsum 生成器。支援 HTML 標籤輸出，可自訂段落數量與長度，快速生成排版測試用文字。",
+    title: "假文產生器 | DevTools",
+    description: "Lorem Ipsum、中文假文、數字資料、模擬訂單，一鍵生成排版與測試用假資料。",
     images: [ogImage],
   },
   twitter: {
-    title: "Lorem Ipsum 亂數假文生成器 | DevTools",
-    description: "免費線上 Lorem Ipsum 生成器。支援 HTML 標籤輸出，可自訂段落數量與長度，快速生成排版測試用文字。",
+    title: "假文產生器 | DevTools",
+    description: "Lorem Ipsum、中文假文、數字資料、模擬訂單，一鍵生成排版與測試用假資料。",
     images: [ogImage.url],
   },
 };
@@ -36,13 +36,13 @@ export default function LoremPage() {
   const appLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Lorem Ipsum Generator",
+    "name": "Lorem Ipsum 假文產生器",
     "url": `${SITE_URL}/tools/${SLUG}`,
     "applicationCategory": "DeveloperApplication",
     "applicationSubCategory": "Text Generator",
     "operatingSystem": "Any",
-    "description": "Lorem Ipsum 假文生成工具，支援 HTML 輸出。",
-    "featureList": "Lorem Ipsum 生成, 自訂段落數量, HTML 格式輸出, 自訂文字長度",
+    "description": "假文與測試資料產生器，支援 Lorem Ipsum、中文假文、數字資料與模擬訂單，HTML 輸出。",
+    "featureList": "Lorem Ipsum 生成, 中文假文生成, 手機號碼/統編/信用卡等數字資料, 模擬訂單資料(CSV/JSON), 自訂段落數量, HTML 格式輸出",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   };
 
@@ -50,6 +50,30 @@ export default function LoremPage() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "這個假文產生器是免費的嗎？需要註冊嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "完全免費，且不需要註冊或登入。所有假文皆在瀏覽器端即時生成，開啟頁面即可使用，無廣告干擾。",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "支援生成中文假文嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "支援。除了拉丁文 Lorem Ipsum，也提供中文假文模式，以常見中文詞彙隨機組成通順的段落，適合中文排版與 UI 文案測試。",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "可以生成模擬訂單或測試用數字資料嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以。工具內建「數字資料」模式（手機號碼、統一編號、信用卡號、訂單編號、亂數數字）與「模擬訂單」模式（含客戶、商品、金額、日期、狀態），並可一鍵複製為 CSV 或 JSON，方便開發測試與展示使用。",
+        },
+      },
       {
         "@type": "Question",
         "name": "Lorem Ipsum 是什麼語言？",
@@ -89,12 +113,13 @@ export default function LoremPage() {
             <Type className="w-6 h-6 text-pink-500" />
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            亂數假文生成器
+            假文產生器
           </h1>
         </div>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          生成標準的 <span className="text-zinc-300">Lorem Ipsum</span> 拉丁假文。
-          <br />支援 <span className="text-blue-400">HTML 格式</span> 複製，UI/UX 設計與排版測試的好幫手。
+          免費線上 <span className="text-zinc-300">假文產生器</span>，支援 Lorem Ipsum、
+          <span className="text-blue-400">中文假文</span>、數字資料與模擬訂單。
+          <br />排版測試、前端開發、Demo 展示都能一鍵生成所需假資料。
         </p>
       </section>
 
@@ -120,10 +145,18 @@ export default function LoremPage() {
           <blockquote className="border-l-4 border-zinc-700 pl-4 italic text-zinc-400">
             &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;
           </blockquote>
+
+          <h3 className="text-xl font-bold text-foreground">不只是 Lorem Ipsum</h3>
+          <p>
+            除了經典拉丁假文，本工具也提供 <strong className="text-zinc-200">中文假文</strong>模式，適合中文介面與內容排版測試；
+            以及 <strong className="text-zinc-200">數字資料</strong>（手機號碼、統一編號、信用卡號、訂單編號、亂數數字）與
+            <strong className="text-zinc-200">模擬訂單</strong>（客戶、商品、金額、日期、狀態）產生器，
+            並支援一鍵複製為 CSV 或 JSON，適合前端開發、API 測試與 Demo 展示時快速填充逼真的假資料。
+          </p>
         </article>
       </section>
 
-      <RelatedTools relatedSlugs={["uuid-generator"]} />
+      <RelatedTools relatedSlugs={["uuid-generator", "json-formatter"]} />
     </main>
   );
 }

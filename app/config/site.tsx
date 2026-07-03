@@ -1,4 +1,5 @@
 import {
+  CalendarClock,
   Clock,
   Database,
   FileJson,
@@ -65,7 +66,7 @@ export const TOOLS_CONFIG: ToolItem[] = [
     status: "stable",
     tags: ["Converter", "Date"],
     lastModified: "2026-04-01",
-    related: ["timezone-converter"],
+    related: ["timezone-converter", "cron-calculator"],
   },
   {
     slug: "timezone-converter",
@@ -75,7 +76,7 @@ export const TOOLS_CONFIG: ToolItem[] = [
     status: "stable",
     tags: ["Timezone", "ISO"],
     lastModified: "2026-04-01",
-    related: ["timestamp-converter"],
+    related: ["timestamp-converter", "cron-calculator"],
   },
   {
     slug: "url-encoder",
@@ -109,12 +110,12 @@ export const TOOLS_CONFIG: ToolItem[] = [
   },
   {
     slug: "lorem-ipsum",
-    title: "亂數假文生成",
-    description: "生成指定長度的 Lorem Ipsum 假文，排版測試專用。",
+    title: "假文產生器",
+    description: "生成 Lorem Ipsum 假文、中文假文、數字資料與模擬訂單，排版與測試資料好幫手。",
     icon: Type,
-    status: "stable",
-    tags: ["Generator", "Design"],
-    lastModified: "2026-04-01",
+    status: "hot",
+    tags: ["Generator", "Design", "Mock Data"],
+    lastModified: "2026-07-03",
     related: ["uuid-generator"],
   },
   {
@@ -146,6 +147,16 @@ export const TOOLS_CONFIG: ToolItem[] = [
     tags: ["Security", "Generator"],
     lastModified: "2026-05-07",
     related: ["jwt-decoder", "jwt-encoder", "hash-generator"],
+  },
+  {
+    slug: "cron-calculator",
+    title: "Cron 表達式計算器",
+    description: "驗證 Crontab 語法、翻譯成中文說明，並計算下次執行時間，DevOps 排程好幫手。",
+    icon: CalendarClock,
+    status: "new",
+    tags: ["DevOps", "Scheduler"],
+    lastModified: "2026-07-03",
+    related: ["timestamp-converter", "timezone-converter"],
   },
 ];
 

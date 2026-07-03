@@ -66,7 +66,7 @@ export default function Home() {
               開始使用 <ArrowRight className="ml-2 h-4 w-4" />
             </button>
           </Link>
-          <a href="https://github.com" target="_blank" rel="noreferrer">
+          <a href="https://github.com/cherites0610/developer-kit" target="_blank" rel="noreferrer">
              <button className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-zinc-800 bg-zinc-950 shadow-sm hover:bg-zinc-900 hover:text-zinc-50 h-10 px-8 py-2">
               GitHub
             </button>
